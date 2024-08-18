@@ -10,10 +10,10 @@ function Navbar() {
                 <NavLink to="/">Home</NavLink>
             </div>
             <div>
-                <NavLink to="/about">About</NavLink>
+                <NavLink to="/login">Login</NavLink>
             </div>
             <div>
-                <NavLink to="/login">Login</NavLink>
+                <NavLink to="/usertype">Signup </NavLink>
             </div>
             <div>
                 <NavLink to="/resetPassword">Find Projects </NavLink>

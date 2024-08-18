@@ -1,0 +1,11 @@
+button{
+    margin: 20px;
+}
+#container{
+    display: flex;
+    justify-content: center;
+}
+#signup{
+    display: block;
+    margin: auto;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import "./login.css";
 
@@ -10,12 +11,31 @@ const Login = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  //firebase db
+  const db = getFirestore();
+
   const handleLogin = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then(async (userCredential) => {
         // Logged in successfully
         console.log('User logged in:', userCredential.user);
+        const user = userCredential.user;
+  
+        // Get the user type from Firestore
+        const userDoc = await getDoc(doc(db, "users", user.uid));
+        if (userDoc.exists()) {
+          const userType = userDoc.data().userType;
+          
+          if (userType === "Freelancer") {
+            navigate('/freelancer-homepage');
+          } else if (userType === "Client") {
+            navigate('/client-homepage');
+          } else {
+            // Handle other types or default
+            navigate('/');
+          }
+        }
       })
       .catch((error) => {
         // Handle errors here

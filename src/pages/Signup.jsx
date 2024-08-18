@@ -1,55 +1,59 @@
 import React, { useState } from 'react';
-import { auth } from '../firebaseConfig';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useLocation } from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { useNavigate } from 'react-router-dom';
 import "./signup.css";
 
-const Signup = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
+function Signup() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate();
+  const userType = location.state?.userType || "Client"; // Default to "Client" if not specified
+  const auth = getAuth();
+  const db = getFirestore();
 
-  const handleSignup = (event) => {
-    event.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed up successfully
-        console.log('User signed up:', userCredential.user);
-      })
-      .catch((error) => {
-        // Handle errors here
-        setError(error.message);
+  const handleSignup = async () => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // Store usertype in Firestore or in the user's profile
+      await setDoc(doc(db, "users", user.uid), {
+        email: user.email,
+        userType: userType
       });
+
+      // Redirect to the appropriate homepage
+      if (userType === "Freelancer") {
+        navigate("/freelancer-homepage")
+      } else {
+        navigate("/client-homepage")
+      }
+    } catch (error) {
+      console.error("Error during signup:", error.message);
+    }
   };
 
   return (
-    <div className="signup-container">
-      <h2>Signup</h2>
-      {error && <p style={{color: 'red'}}>{error}</p>}
-      <form onSubmit={handleSignup}>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Sign Up</button>
-      </form>
+    <div>
+      <h2>Sign Up</h2>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Email"
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
+      />
+      <button onClick={handleSignup}>Sign Up</button>
     </div>
   );
-};
+}
 
 export default Signup;
