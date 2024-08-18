@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import "./login.css";
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import "./signup.css";
 
-const Login = () => {
+const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
 
-  const handleLogin = (event) => {
+  const handleSignup = (event) => {
     event.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Logged in successfully
-        console.log('User logged in:', userCredential.user);
+        // Signed up successfully
+        console.log('User signed up:', userCredential.user);
       })
       .catch((error) => {
         // Handle errors here
@@ -24,10 +22,10 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
+    <div className="signup-container">
+      <h2>Signup</h2>
       {error && <p style={{color: 'red'}}>{error}</p>}
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleSignup}>
         <div>
           <label htmlFor="email">Email:</label>
           <input
@@ -48,13 +46,10 @@ const Login = () => {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">Sign Up</button>
       </form>
-      <button onClick={() => navigate('/signup')}>
-        Don't have an account? Sign Up
-      </button>
     </div>
   );
 };
 
-export default Login;
+export default Signup;

@@ -1,14 +1,14 @@
 import React from 'react';
-import Navbar from './components/Navbar'; 
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 //components
-
 
 //pages
 import Home from './pages/Home';
 import Login from './pages/Login';
-import 
+import PasswordReset from './pages/PasswordReset';
+import About from './pages/About';
+import Signup from './pages/Signup';
 
 
 
@@ -23,11 +23,26 @@ function App() {
       path: "/login",
       element: <Login/>
     },
-    {},
-    {},
+    { 
+      path: "/about",
+      element: <About/>
+    },
+    {
+      path: "/resetPassword",
+      element: <PasswordReset/>
+    },
+    {
+      path: "/signup",
+      element: <Signup/>
+    }
 
   ])
 
+  return (
+    <>
+    <RouterProvider router = {router} />
+    </>
+  )
   
 }
 

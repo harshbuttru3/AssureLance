@@ -1,23 +1,24 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import './navbar.css'
 
 function Navbar() {
   return (
     <nav>
-        <ul>
-            <li>
+        <div className="navContainer">
+            <div>
                 <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-                <NavLink to="/">About</NavLink>
-            </li>
-            <li>
-                <NavLink to="/">Post a Job</NavLink>
-            </li>
-            <li>
-                <NavLink to="/">Find Projects</NavLink>
-            </li>
-        </ul>
+            </div>
+            <div>
+                <NavLink to="/about">About</NavLink>
+            </div>
+            <div>
+                <NavLink to="/login">Login</NavLink>
+            </div>
+            <div>
+                <NavLink to="/resetPassword">Find Projects </NavLink>
+            </div>
+        </div>
     </nav>
   )
 }

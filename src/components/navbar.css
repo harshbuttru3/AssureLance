@@ -1,0 +1,11 @@
+.active{
+    color: aqua;
+}
+.navContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+.navContainer div{
+margin-left: 20px;
+}

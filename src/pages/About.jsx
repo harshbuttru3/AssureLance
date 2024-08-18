@@ -1,14 +1,13 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 
-
-function Home() {
+function About() {
   return (
     <>
     <Navbar/>
-    <h1>Welcome to the Home page of Assurelance.</h1>
+    <div>This is about us.</div>
     </>
   )
 }
 
-export default Home
+export default About
