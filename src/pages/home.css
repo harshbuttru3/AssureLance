@@ -1,0 +1,14 @@
+body{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #000000, #cccbcb);
+    overflow-x: hidden;
+}
+#circle{
+    border-radius: 50%;
+    background-color: #950f0d;
+    height: 900px;
+    width: 900px;
+    z-index: 99;
+    filter: blur(20px);
+}

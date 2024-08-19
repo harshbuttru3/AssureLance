@@ -1,0 +1,10 @@
+#mouseshadow{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: #b9484a;
+    position: fixed;
+    filter: blur(50px);
+    z-index: -1;
+
+}

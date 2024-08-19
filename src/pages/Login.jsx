@@ -4,6 +4,8 @@ import { auth } from '../firebaseConfig';
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import "./login.css";
+import Navbar from '../components/Navbar';
+import Spline from '../components/Spline';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -44,6 +46,7 @@ const Login = () => {
   };
 
   return (
+    <div id='main-container'>
     <div className="login-container">
       <h2>Login</h2>
       {error && <p style={{color: 'red'}}>{error}</p>}
@@ -73,6 +76,10 @@ const Login = () => {
       <button onClick={() => navigate('/signup')}>
         Don't have an account? Sign Up
       </button>
+    </div>
+    {/* <div id='spline-container'>
+          <Spline/>
+      </div> */}
     </div>
   );
 };

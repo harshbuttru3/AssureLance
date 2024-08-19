@@ -1,11 +1,75 @@
-.active{
-    color: aqua;
-}
-.navContainer{
+/* #intro{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #000000, #c5c2c2);
+    overflow-x: hidden;
+} */
+
+ #nav{
+    height: 10%;
+    width: 100%;
+    /* background-color: aqua; */
+    color: rgb(255, 255, 255);
+    text-transform: capitalize;
     display: flex;
-    flex-direction: row;
-    justify-content: right;
+    /* justify-content: space-around; */
+    align-items: center;
+    padding-left: 13%;
+    font-size: 1.2vw;
+    gap: 5%;
+    padding-top: 1%;
 }
-.navContainer div{
-margin-left: 20px;
+
+ #nav #navopt{
+    height: 100%;
+    width: 100%;
+    /* background-color: aqua; */
+    color: rgb(255, 255, 255);
+    text-transform: capitalize;
+    padding-left: 4%;
+    font-size: 1vw;
+    display: flex;
+    align-items: center;
+    gap: 3%;
+
 }
+a{
+    color: white;
+    text-decoration: none;
+}
+
+#button{
+    font-size: 0.6vw;
+    z-index: 1;
+    font-weight: 800;
+    /* border: none; */
+    margin-right: 10%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    
+    
+}
+
+#button h1{
+    border-radius: 10%;
+    padding: 5% 12%;
+    background-color: rgba(193, 193, 193, 0.3);
+    /* background-color: transparent; */
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    /* border: 2px; */
+    /* border-color: #000000; */
+    
+} 
+
+/* design circle */
+/* #intro #circle{
+    border-radius: 50%;
+    background-color: #950f0d;
+    height: 900px;
+    width: 900px;
+    z-index: -2;
+    filter: blur(20px);
+} */
