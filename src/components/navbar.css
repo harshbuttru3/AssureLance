@@ -43,7 +43,7 @@ a{
     z-index: 1;
     font-weight: 800;
     /* border: none; */
-    margin-right: 10%;
+    padding-right: 10%;
     display: flex;
     align-items: center;
     gap: 50px;
