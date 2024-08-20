@@ -1,57 +1,112 @@
-body{
-  background-color: rgb(255, 255, 255);
+#main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  width: 100vw; 
+  overflow: hidden; 
+  box-sizing: border-box; 
+  color: #fff;
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1572470639737-b7ba86062735?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTF8fGJsYWNrJTIwYW5kJTIwcmVkfGVufDB8MHwwfHx8MA%3D%3D");
 }
-.login-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 30%;
-    left: 10%;
-  }
+
+.login-container{
+  background-color: rgba(150, 150, 150, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 3.6%;
+  padding: 1% 2%;
+  height: 60%;
+  width: 30%;
+  position: relative;
+}
+
+h2{
+  display: flex;
+  justify-content: center;
+  font-size: 2vw;
+  color: rgba(216, 209, 209, 0.759);
+}
+
+#cup{
+  color: red;
+  cursor: pointer;
+}
+
+
+.input{
+  display: flex;
+  justify-content: center;
+  margin: 2vh ;
   
-  .login-container h2 {
-    color: #01b7ff;
-    text-align: center;
-    margin-bottom: 20px;
-  }
+
+}
+
+input{
+  font-size: 1.5vw;
+  text-align: center;
+  color:#c7c7c7;
+  font-weight: 500;
+  padding: 1% 3%;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: transparent;
+  border-color: red;
+  outline: none;
+}
+
+#button{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  margin-top: 2vh;
+}
+
+button{
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.7vw;
+  padding: 0.5vh 2vw;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+#alternate{
+  display: flex;
+  justify-content: flex-end;
+  margin: 1vh 2.8vw;
+}
+
+.google{
+  display: flex;
+  justify-content: center;
+  margin-top: 1.6vh;
+  font-size: 3vw;
+  cursor: pointer;
+
+}
+
+.google:hover{
   
-  .login-container form div {
-    margin-bottom: 15px;
-  }
-  
-  .login-container label {
-    display: block;
-    margin-bottom: 5px;
-    color: white;
-  }
-  
-  .login-container input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .login-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin: auto;
-    margin-bottom: 20px;
-  }
-  
-  .login-container button:hover {
-    background-color: #0056b3;
-  }
-  
-  
+  color: rgb(255, 0, 0); 
+}
+
+#direct{
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5vh;
+  font-size: 1vw;
+}
+
+button:hover {
+  background-color: red;
+  color: white;
+}
+

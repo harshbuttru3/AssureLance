@@ -49,33 +49,42 @@ const Login = () => {
     <div id='main-container'>
     <div className="login-container">
       <h2>Login</h2>
+      {/* <img id="img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.ug6aykyoWPXUNlsch1mJEQHaEo%26pid%3DApi&f=1&ipt=299eb4dcc5b915239c31f8a1c389369ec99cfce181303e0524392a494a466804&ipo=images" alt="" /> */}
       {error && <p style={{color: 'red'}}>{error}</p>}
       <form onSubmit={handleLogin}>
-        <div>
-          <label htmlFor="email">Email:</label>
+        <div className="input">
+          {/* <label htmlFor="email"></label> */}
           <input
             type="email"
             id="email"
+            placeholder='Email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
+        <div className='input'>
+          {/* <label htmlFor="password"></label> */}
           <input
             type="password"
             id="password"
+            placeholder='Password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
+      <p id = "alternate" onClick={() => navigate('/signup')}>
+        Don't have an account? <span id="cup">Sign Up</span>
+      </p>
+        <div id="button">
         <button type="submit">Login</button>
+        </div>
+        <hr />
+
       </form>
-      <button onClick={() => navigate('/signup')}>
-        Don't have an aman account? Sign Up
-      </button>
+      <p id='direct'>continue with</p>
+      <i className="ri-google-fill google"></i>
     </div>
     {/* <div id='spline-container'>
           <Spline/>
