@@ -74,7 +74,7 @@ const Login = () => {
         <button type="submit">Login</button>
       </form>
       <button onClick={() => navigate('/signup')}>
-        Don't have an account? Sign Up
+        Don't have an aman account? Sign Up
       </button>
     </div>
     {/* <div id='spline-container'>
