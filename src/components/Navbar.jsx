@@ -24,7 +24,7 @@ function Navbar() {
       </div>
       <div id="button">
         <h1>
-          <NavLink to="/signup">Signup</NavLink>
+          <NavLink to="/usertype">Signup</NavLink>
         </h1>
         <h1>
           <NavLink to="/login">Login</NavLink>

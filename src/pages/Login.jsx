@@ -6,6 +6,9 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import "./login.css";
 import Navbar from '../components/Navbar';
 import Spline from '../components/Spline';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -84,7 +87,8 @@ const Login = () => {
 
       </form>
       <p id='direct'>continue with</p>
-      <i className="ri-google-fill google"></i>
+      <FontAwesomeIcon className='google' icon={faGoogle} />
+
     </div>
     {/* <div id='spline-container'>
           <Spline/>

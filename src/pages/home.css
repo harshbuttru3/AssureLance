@@ -9,6 +9,6 @@ body{
     background-color: #950f0d;
     height: 900px;
     width: 900px;
-    z-index: 99;
+    z-index: 0;
     filter: blur(20px);
 }
