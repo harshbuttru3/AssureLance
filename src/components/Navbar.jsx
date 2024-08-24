@@ -9,7 +9,7 @@ function Navbar() {
     
   return (
     <div className='Navbar'>
-      <div id="navopt">
+      <div className="navopt">
         <h2>AssureLance</h2>
         <h3>
           <NavLink to="/about">About</NavLink>

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import './mouse.css';
+import './mouse.css'; // Ensure this file contains the required styles
 import gsap from 'gsap';
 
 function Mouse() {
@@ -14,13 +14,15 @@ function Mouse() {
             });
         };
 
-        const scalemouse = document.querySelector("#navopt");
+        const handleMouseEnter = (event) => {
+            const targetClass = event.target.classList.contains('navopt') ? 'navopt' : 'page2';
+            const scale = targetClass === 'navopt' ? 3 : 3; // Adjust scale if different for different elements
+            const backgroundColor = targetClass === 'navopt' ? '#fdfffc56' : 'rgba(255, 255, 0, 0.7)';
 
-        const handleMouseEnter = () => {
             gsap.to(mouseShadowRef.current, {
-                scale: 3,
-                border: "1px solid #ffffffab",
-                backgroundColor: "#fdfffc56",
+                scale,
+                border: "1px",
+                backgroundColor,
             });
         };
 
@@ -32,18 +34,35 @@ function Mouse() {
             });
         };
 
-    // Add event listeners
-        scalemouse.addEventListener("mouseenter", handleMouseEnter);
-        scalemouse.addEventListener("mouseleave", handleMouseLeave);
+        const scalemouse = document.querySelector(".navopt");
+        const scalemousefooter = document.querySelector(".page2");
+
+        // Add event listeners
+        if (scalemouse) {
+            scalemouse.addEventListener("mouseenter", handleMouseEnter);
+            scalemouse.addEventListener("mouseleave", handleMouseLeave);
+        }
+
+        if (scalemousefooter) {
+            scalemousefooter.addEventListener("mouseenter", handleMouseEnter);
+            scalemousefooter.addEventListener("mouseleave", handleMouseLeave);
+        }
 
         document.addEventListener('mousemove', handleMouseMove);
 
-
-        // Cleanup the event listener on component unmount
+        // Cleanup the event listeners on component unmount
         return () => {
             document.removeEventListener('mousemove', handleMouseMove);
-            scalemouse.removeEventListener("mouseenter", handleMouseEnter);
-            scalemouse.removeEventListener("mouseleave", handleMouseLeave);
+
+            if (scalemouse) {
+                scalemouse.removeEventListener("mouseenter", handleMouseEnter);
+                scalemouse.removeEventListener("mouseleave", handleMouseLeave);
+            }
+
+            if (scalemousefooter) {
+                scalemousefooter.removeEventListener("mouseenter", handleMouseEnter);
+                scalemousefooter.removeEventListener("mouseleave", handleMouseLeave);
+            }
         };
     }, []);
 
