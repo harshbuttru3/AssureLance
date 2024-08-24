@@ -8,17 +8,42 @@ function Mouse() {
     useEffect(() => {
         const handleMouseMove = (event) => {
             gsap.to(mouseShadowRef.current, {
-                x: event.clientX - 100,
-                y: event.clientY - 100,
+                x: event.clientX,
+                y: event.clientY,
                 ease: "back.out",
             });
         };
 
+        const scalemouse = document.querySelector("#navopt");
+
+        const handleMouseEnter = () => {
+            gsap.to(mouseShadowRef.current, {
+                scale: 3,
+                border: "1px solid #ffffffab",
+                backgroundColor: "#fdfffc56",
+            });
+        };
+
+        const handleMouseLeave = () => {
+            gsap.to(mouseShadowRef.current, {
+                scale: 1,
+                backgroundColor: "#fdfffc",
+                border: "none",
+            });
+        };
+
+    // Add event listeners
+        scalemouse.addEventListener("mouseenter", handleMouseEnter);
+        scalemouse.addEventListener("mouseleave", handleMouseLeave);
+
         document.addEventListener('mousemove', handleMouseMove);
+
 
         // Cleanup the event listener on component unmount
         return () => {
             document.removeEventListener('mousemove', handleMouseMove);
+            scalemouse.removeEventListener("mouseenter", handleMouseEnter);
+            scalemouse.removeEventListener("mouseleave", handleMouseLeave);
         };
     }, []);
 

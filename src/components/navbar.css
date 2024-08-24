@@ -1,75 +1,57 @@
-/* #intro{
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(to right, #000000, #c5c2c2);
-    overflow-x: hidden;
-} */
-
- #nav{
+.Navbar{
     height: 10%;
     width: 100%;
-    /* background-color: aqua; */
-    color: rgb(255, 255, 255);
     text-transform: capitalize;
-    display: flex;
-    /* justify-content: space-around; */
-    align-items: center;
-    padding-left: 13%;
     font-size: 1.2vw;
-    gap: 5%;
-    padding-top: 1%;
+    display: flex;
+    align-items: center;
 }
 
- #nav #navopt{
+.Navbar h2{
+    margin-right: 25%;
+    font-family: "cursive";
+    color: rgb(102, 216, 45);
+}
+
+.Navbar #navopt{
+    margin: 0.15% 0%;
     height: 100%;
     width: 100%;
-    /* background-color: aqua; */
-    color: rgb(255, 255, 255);
     text-transform: capitalize;
-    padding-left: 4%;
+    padding-left: 2%;
     font-size: 1vw;
     display: flex;
     align-items: center;
     gap: 3%;
+    transition: color 0.3s ease;
 
 }
+
 a{
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
-#button{
-    font-size: 0.6vw;
-    z-index: 1;
-    font-weight: 800;
-    /* border: none; */
-    padding-right: 10%;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    
+
+
+.Navbar h1{
+    font-size: 1.3vw;
+    font-weight: bold;
+    padding: 0.5vh 1vw;
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #06d6a0;
+    border: none;
+    border-radius: 30px;
+    transition: color 0.3s ease;
+    /* https://coolors.co/palette/011627-fdfffc-2ec4b6-e71d36-ff9f1c */
     
 }
 
-#button h1{
-    border-radius: 10%;
-    padding: 5% 12%;
-    background-color: rgba(193, 193, 193, 0.3);
-    /* background-color: transparent; */
-    color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    /* border: 2px; */
-    /* border-color: #000000; */
-    
+.Navbar #navopt h1:hover{
+    cursor: pointer;
+    background-color: #000814;
+    color: white;
 } 
-
-/* design circle */
-/* #intro #circle{
-    border-radius: 50%;
-    background-color: #950f0d;
-    height: 900px;
-    width: 900px;
-    z-index: -2;
-    filter: blur(20px);
-} */

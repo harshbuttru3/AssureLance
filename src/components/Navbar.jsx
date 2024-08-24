@@ -1,14 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './navbar.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 function Navbar() {
     
   return (
-    <>
-    <nav id="nav">
+    <div className='Navbar'>
       <div id="navopt">
+        <h2>AssureLance</h2>
         <h3>
           <NavLink to="/about">About</NavLink>
         </h3>
@@ -19,19 +21,17 @@ function Navbar() {
           <NavLink to="/information">Information</NavLink>
         </h3>
         <h3>
-          <NavLink to="/info">Info</NavLink>
+          <NavLink to="/info">Hr & Training</NavLink>
         </h3>
-      </div>
-      <div id="button">
+        <h3>
+          <NavLink to="#">More</NavLink>
+        </h3>
         <h1>
-          <NavLink to="/usertype">Signup</NavLink>
-        </h1>
-        <h1>
-          <NavLink to="/login">Login</NavLink>
+          {/* here you have to change the direction of the directory of the intermediate page of registering the user . */}
+          <NavLink to="/usertype">Register/Login</NavLink>
         </h1>
       </div>
-    </nav>
-    </>
+    </div>
   );
 }
 
